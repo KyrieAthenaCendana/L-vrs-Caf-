@@ -13,18 +13,23 @@
     color: black;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
   }
+
+
   .container {
     max-width: 900px;
     padding: 20px;
     position: relative; 
   }
-  
+
+
   header {
     text-align: center;
     margin-bottom: 20px;
     position: relative;
   }
+
   .logo-box {
     background-color: #fff8e0;
     display: inline-block;
@@ -38,7 +43,7 @@
     position: relative;
     z-index: 2;
   }
-  
+
   .cats-img {
     position: absolute;
     top: -70px;
@@ -48,7 +53,7 @@
     z-index: 2;
   }
 
-  
+
   .welcome-text {
     font-size: 1.3em;
     text-align: center;
@@ -69,24 +74,20 @@
     font-size: 1.1em;
     margin-top: 10px;
   }
-
   .text-block p {
     margin: 0 0 20px 0;
     font-weight: 400;
   }
-
   .image-block {
     flex: 1 1 45%;
   }
-
-  /* Images style */
   .image-block img {
     width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgb(0 0 0 / 0.25);
   }
 
-  /* Abstract shapes on background */
+ 
   body::before {
     content: "";
     position: fixed;
@@ -98,6 +99,7 @@
     top: 50px;
     left: 40px;
   }
+
   body::after {
     content: "";
     position: fixed;
@@ -110,7 +112,7 @@
     right: 40px;
   }
 
-  /* Circular hamburger menu button */
+ 
   .nav-toggle-button {
     position: fixed;
     top: 15px;
@@ -128,12 +130,13 @@
     z-index: 1000;
     transition: background-color 0.3s ease;
   }
+
   .nav-toggle-button:hover,
   .nav-toggle-button:focus {
     background-color: rgba(255, 248, 224, 0.3);
     outline: none;
   }
-  /* Hamburger bars */
+
   .nav-toggle-button span {
     display: block;
     width: 22px;
@@ -144,10 +147,10 @@
     transition: all 0.3s ease;
   }
 
-  /* Navigation menu panel */
+
   .nav-menu {
     position: fixed;
-    top: 65px; /* below button */
+    top: 65px;
     left: 15px;
     background-color: #fff8e0;
     border-radius: 10px;
@@ -161,7 +164,6 @@
   .nav-menu.active {
     display: flex;
   }
-  /* Nav links */
   .nav-menu a {
     font-family: 'Cursive', 'Comic Sans MS', cursive;
     font-weight: 700;
@@ -177,8 +179,6 @@
     color: white;
     outline: none;
   }
-
-  /* Responsive: hide nav button on wide screen, show inline nav instead */
   @media(min-width: 700px) {
     .nav-toggle-button {
       display: none;
@@ -207,22 +207,137 @@
       font-weight: 800;
     }
   }
+
+  
+  #menu {
+    margin-top: 40px;
+    text-align: center;
+    color: black;
+  }
+  #menu h2 {
+    font-family: 'Cursive', 'Comic Sans MS', cursive;
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  #menu h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  #menu div.flavors {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    font-family: 'Cursive', 'Comic Sans MS', cursive;
+    font-size: 1.4em;
+  }
+  #menu div.flavors > div {
+    text-align: left;
+  }
+  #menu div.images-container {
+    margin-top: 30px;
+  }
+  #menu div.images-container img {
+    max-width: 150px;
+    margin-right: 20px;
+    vertical-align: middle;
+  }
+  #menu div.images-container img:last-child {
+    max-width: 90px;
+    margin-right: 0;
+  }
+
+
+  #about {
+    margin-top: 40px;
+    position: relative;
+    padding: 30px 25px;
+    font-family: 'Cursive', 'Comic Sans MS', cursive;
+    color: black;
+    background: #7a3ca7; 
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+
+  #about h2 {
+    font-weight: 900;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+  #about h3 {
+    font-weight: 900;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: black;
+  }
+
+  #about p,
+  #about ul,
+  #about ol {
+    font-weight: 400;
+    font-size: 1.1em;
+    color: black;
+    margin: 0 0 10px 15px;
+  }
+
+  #about ul {
+    list-style-type: disc;
+  }
+  #about ol {
+    padding-left: 20px;
+  }
+
+ 
+  #about::before,
+  #about::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    border-radius: 50% / 40%;
+    opacity: 0.8;
+  }
+  #about::before {
+    top: -60px;
+    left: -35px;
+    width: 180px;
+    height: 140px;
+    background: #dca7cf; 
+    border-radius: 55% 45% 40% 60% / 65% 40% 60% 35%;
+  }
+  #about::after {
+    bottom: -60px;
+    right: -25px;
+    width: 250px;
+    height: 220px;
+    background: #a160ad; 
+    border-radius: 40% 60% 50% 70% / 60% 40% 25% 55%;
+  }
+
+  
+  #about > * {
+    position: relative;
+    z-index: 1;
+  }
 </style>
 </head>
 <body>
   <div class="container">
-    <!-- Hamburger circle menu button -->
+    
     <button aria-label="Toggle navigation menu" class="nav-toggle-button" id="navToggle" aria-expanded="false" aria-controls="navMenu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Navigation links -->
+   
     <nav id="navMenu" class="nav-menu" role="navigation">
-      <a href="#home" tabindex="0">Home</a>
-      <a href="#menu" tabindex="0">Menu</a>
-      <a href="#about" tabindex="0">About Us</a>
+      <a href="#home" tabindex="0" data-section="home">Home</a>
+      <a href="#menu" tabindex="0" data-section="menu">Menu</a>
+      <a href="#about" tabindex="0" data-section="about">About Us</a>
     </nav>
 
     <header>
@@ -230,38 +345,42 @@
       <div class="logo-box">l'vrs Café</div>
     </header>
 
-    <div class="welcome-text" id="home">
-      Welcome to l'vrs Café! A place where you can enjoy delicious coffee and pastries while spending time with our adorable cats.
-    </div>
-
-    <div class="content">
-      <div class="text-block">
-        <p><strong>Cats have a unique ability to weave themselves into the fabric of our lives, offering not just companionship but also a soothing presence that can alleviate stress and anxiety.</strong></p>
-      </div>
-      <div class="image-block">
-        <img src="https://i.imgur.com/kEufaJY.jpeg" alt="Group of Cats" />
+  
+    <section id="home">
+      <div class="welcome-text">
+        Welcome to l'vrs Café! A place where you can enjoy delicious coffee and pastries while spending time with our adorable cats.
       </div>
 
-      <div class="image-block">
-        <img src="https://i.imgur.com/JLj1KBL.jpeg" alt="Two Women Holding Cats"/>
-      </div>
+      <div class="content">
+        <div class="text-block">
+          <p><strong>Cats have a unique ability to weave themselves into the fabric of our lives, offering not just companionship but also a soothing presence that can alleviate stress and anxiety.</strong></p>
+        </div>
+        <div class="image-block">
+          <img src="https://i.imgur.com/kEufaJY.jpeg" alt="Group of Cats" />
+        </div>
 
-      <div class="text-block" style="display:flex; align-items:center;">
-        <p><strong>You can also meet some fellow cat lovers and make them your new furry friends.</strong></p>
-      </div>
-    </div>
+        <div class="image-block">
+          <img src="https://i.imgur.com/JLj1KBL.jpeg" alt="Two Women Holding Cats"/>
+        </div>
 
-    <section id="menu" style="margin-top: 40px; text-align: center; color: black;">
-      <h2 style="font-family:'Cursive', 'Comic Sans MS', cursive; font-size: 3em; margin-bottom: 10px;">menu</h2>
-      <h3 style="font-weight: 700; margin-bottom: 15px;">Flavors:</h3>
-      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; font-family: 'Cursive', 'Comic Sans MS', cursive; font-size: 1.4em;">
-        <div style="text-align: left;">
+        <div class="text-block" style="display:flex; align-items:center;">
+          <p><strong>You can also meet some fellow cat lovers and make them your new furry friends.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="menu" style="display:none;">
+      <h2>menu</h2>
+      <h3>Flavors:</h3>
+      <div class="flavors">
+        <div>
           <p>Chocolate - ₱50</p>
           <p>Vanilla - ₱45</p>
           <p>Red Velvet - ₱75</p>
           <p>Matcha - ₱65</p>
         </div>
-        <div style="text-align: left;">
+        <div>
           <p>Chocolate - ₱65</p>
           <p>Vanilla - ₱60</p>
           <p>Red Velvet - ₱65</p>
@@ -269,21 +388,48 @@
           <p>Taro - ₱67</p>
           <p>Caramel - ₱69</p>
         </div>
-        <div style="text-align: left;">
+        <div>
           <p>Red Tea - ₱69</p>
           <p>Green tea - ₱67</p>
         </div>
       </div>
-      <div style="margin-top: 30px;">
-        <img src="https://i.imgur.com/BnWLEzB.png" alt="Cookies" style="max-width: 150px; margin-right: 20px; vertical-align: middle;">
-        <img src="https://i.imgur.com/u1KgBfh.png" alt="Bubble Tea Drinks" style="max-width: 150px; margin-right: 20px; vertical-align: middle;">
-        <img src="https://i.imgur.com/gEfmnYK.png" alt="Teacups with biscuits" style="max-width: 90px; vertical-align: middle;">
+      <div class="images-container">
+        <img src="https://i.imgur.com/BnWLEzB.png" alt="Cookies" />
+        <img src="https://i.imgur.com/u1KgBfh.png" alt="Bubble Tea Drinks" />
+        <img src="https://i.imgur.com/gEfmnYK.png" alt="Teacups with biscuits" />
       </div>
+    </section>
+
+  
+    <section id="about" style="display:none;">
+      <h2>Where to find us?</h2>
+
+      <h3>Address and Social Media:</h3>
+      <p>• Alapan 1-B, Kawit Cavite</p>
+      <p>• Follow us on Facebook & Instagram @l'vrsCafé</p>
+
+      <h3>Rules and Regulations:</h3>
+      <ul>
+        <li>Be kind to the cats</li>
+        <li>No flash photography</li>
+        <li>Handle them gently and with care</li>
+        <li>Book a reservation before going to the café</li>
+      </ul>
+
+      <h3>How to Reserve a Slot?</h3>
+      <ol>
+        <li>Visit our official website or social media page (@l'vrsCafé).</li>
+        <li>Go to the "Reservations" section.</li>
+        <li>Select your preferred date and time.</li>
+        <li>Fill in your contact details (Name, Age, Phone Number).</li>
+        <li>Confirm your booking and wait for the confirmation in your email account.</li>
+        <li>Arrive at least 20 minutes before your scheduled time to check in because it might take a few minutes to check your reservation at the counter.</li>
+      </ol>
     </section>
   </div>
 
   <script>
-    // Toggle the nav menu on hamburger click
+    
     const navToggleButton = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -293,9 +439,36 @@
       navMenu.classList.toggle('active');
     });
 
-    // Optional: close menu when clicking a link (for mobile)
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+   
+    const navLinks = navMenu.querySelectorAll('a');
+    const sections = {
+      home: document.getElementById('home'),
+      menu: document.getElementById('menu'),
+      about: document.getElementById('about')
+    };
+
+    
+    function showSection(sectionId) {
+      for (const key in sections) {
+        if (key === sectionId) {
+          sections[key].style.display = 'block';
+        } else {
+          sections[key].style.display = 'none';
+        }
+      }
+    }
+
+    
+    showSection('home');
+
+   
+    navLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const sectionId = link.getAttribute('data-section');
+        showSection(sectionId);
+        
+        
         navMenu.classList.remove('active');
         navToggleButton.setAttribute('aria-expanded', false);
       });
